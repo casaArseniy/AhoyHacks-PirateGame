@@ -14,7 +14,7 @@ signal enemy_blown_up
 var shoot=false
 
 export var cannonball_speed= 800
-
+var explosion=preload("res://ShipExplode.tscn")
 onready var timer = get_node("Timer")
 
 func _ready():
@@ -42,8 +42,10 @@ func _physics_process(delta):
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("pirate_ball"):
 		emit_signal("enemy_blown_up")
+		var explosion_instance = explosion.instance()
+		explosion_instance.position = get_global_position()
+		get_tree().get_root().add_child(explosion_instance)
 		body.queue_free()
-		#get_tree().reload_current_scene()
 		queue_free()
 
 
