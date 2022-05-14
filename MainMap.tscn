@@ -6,7 +6,6 @@
 [node name="MainMap" type="Node2D"]
 
 [node name="PirateShip" parent="." instance=ExtResource( 1 )]
-position = Vector2( 182, 304 )
 
 [node name="EnemyShip" parent="." instance=ExtResource( 2 )]
-position = Vector2( 603, 477 )
+position = Vector2( 413, 478 )

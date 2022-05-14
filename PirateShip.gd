@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var speed = 100 # How fast the player will move (pixels/sec).
+export var speed = 300 # How fast the player will move (pixels/sec).
 export var cannonball_speed= 800
 var screen_size # Size of the game window.
 var cannonball = preload("res://Cannonball.tscn")
@@ -68,4 +68,5 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("enemy_ball"):
+		body.queue_free()
 		print("Game Over!")
