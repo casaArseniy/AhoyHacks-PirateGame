@@ -9,9 +9,10 @@ extents = Vector2( 71, 33.25 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 136.625, 8 )
 
-[node name="EnemyShip" type="KinematicBody2D"]
+[node name="EnemyShip" type="KinematicBody2D" groups=["enemy_ship"]]
 position = Vector2( -1, -1 )
 rotation = -1.5708
+scale = Vector2( 0.42, 0.42 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
