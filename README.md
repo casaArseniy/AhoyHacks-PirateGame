@@ -10,3 +10,5 @@ Choose a distribution depending on your Operating System (Linux or Windows).
 <br>Download zip file.
 <br>Unzip and start executable.
 
+<h2> Except the ships and the cannonballs art is not mine, all found either on https://opengameart.org/ or https://kenney.nl/assets/abstract-platformer.
+
