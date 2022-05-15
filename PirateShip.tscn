@@ -7,8 +7,11 @@
 extents = Vector2( 25.5, 11.5 )
 
 [node name="PirateShip" type="KinematicBody2D" groups=["main_ship"]]
-position = Vector2( -1, 1 )
+position = Vector2( 130, 107 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 6, 3 )
@@ -37,5 +40,13 @@ position = Vector2( 1, -1 )
 visible = false
 position = Vector2( -31, -34 )
 polygon = PoolVector2Array( 12, 41, 41, 41, 53, 35, 60, 35, 60, 31, 53, 31, 42, 26, 12, 26 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.4, 0.4 )
+limit_left = 0
+limit_top = 0
+limit_right = 1024
+limit_bottom = 1024
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

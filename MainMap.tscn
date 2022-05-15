@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://PirateShip.tscn" type="PackedScene" id=1]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://WorldMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://MainMap.gd" type="Script" id=4]
 
@@ -12,3 +13,11 @@ position = Vector2( 1, -1 )
 
 [node name="PirateShip" parent="." instance=ExtResource( 1 )]
 position = Vector2( 268, 225 )
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="GameTimer" type="Timer" parent="."]
+
+[connection signal="got_shot" from="PirateShip" to="." method="pirate_got_shot"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_GameTimer_timeout"]

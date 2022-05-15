@@ -12,7 +12,9 @@ var center=Vector2.ZERO
 
 var anchor=false
 
-var Health=3
+
+
+signal got_shot
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,9 +25,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
-	if Health==0:
-		get_tree().reload_current_scene()
 	
 	target=get_global_mouse_position()
 	velocity=global_position.direction_to(target)*speed
@@ -76,5 +75,5 @@ func _on_Area2D_body_entered(body):
 		var explosion_instance = explosion.instance()
 		explosion_instance.position = get_global_position()
 		get_tree().get_root().add_child(explosion_instance)
-		Health-=1
+		emit_signal("got_shot")
 		
